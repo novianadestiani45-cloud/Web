@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+ <meta charset="UTF-8">
+ <title>Formulir Pendaftaran</title>
+ <style>
+ /* CSS: Styling tampilan */
+ body { font-family: sans-serif; display: flex; justify-content: center; padding: 50px; background: #f4f4f4; }
+ .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); width: 300px; }
+ input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+ button { width: 100%; padding: 10px; background: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer; }
+ button:hover { background: #218838; }
+ #pesan { margin-top: 15px; font-size: 14px; text-align: center; }
+ </style>
+</head>
+<body>
+
+<div class="card">
+ <h2>Daftar Sekarang</h2>
+ <input type="text" id="nama" placeholder="Masukkan Nama">
+ <input type="email" id="email" placeholder="Masukkan Email">
+ <button onclick="prosesDaftar()">Daftar</button>
+ <div id="pesan"></div>
+</div>
+
+<script>
+ /* JavaScript: Logika interaksi */
+ function prosesDaftar() {
+ const nama = document.getElementById('nama').value;
+ const email = document.getElementById('email').value;
+ const pesan = document.getElementById('pesan');
+
+ if (nama === "" || email === "") {
+ pesan.style.color = "red";
+ pesan.innerText = "Harap isi semua kolom!";
+ } else {
+ pesan.style.color = "green";
+ pesan.innerText = "Terima kasih " + nama + ", pendaftaran berhasil!";
+ console.log("Data diterima:", { nama, email });
+ }
+ }
+</script>
+
+</body>
+</html>
